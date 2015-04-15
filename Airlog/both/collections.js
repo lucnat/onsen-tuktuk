@@ -1,0 +1,1 @@
+LoggerNames = new Mongo.Collection('loggernames');
