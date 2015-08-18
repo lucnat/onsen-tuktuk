@@ -3,9 +3,10 @@ var JSFTP = Npm.require('jsftp');
 var rootDirectory = 'ftp.naterop.net/html/omniadata/sensordata';
 var i = rootDirectory.indexOf('/');
 var server = rootDirectory.substring(0,i);
-var directory = rootDirectory.substring(i);
 
-var Ftp = new JSFTP({
+directory = rootDirectory.substring(i);
+
+Ftp = new JSFTP({
   host: server,
   port: 21, 		// defaults to 21
   user: "web57", 	// defaults to "anonymous"
@@ -15,6 +16,8 @@ var Ftp = new JSFTP({
 var loggers = [];
 
 var calls = 0;
+
+/*
 Ftp.ls(directory, function(err, res) {
   res.forEach(function(file) {
     loggers.push(file.name);
@@ -43,3 +46,5 @@ function insertMissingIntoDB(){
 		if(dbloggers.indexOf(logger) == -1) LoggerNames.insert(logger);
 	});
 }
+
+*/

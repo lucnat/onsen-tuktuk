@@ -1,1 +1,1 @@
-LoggerNames = new Mongo.Collection('loggernames');
+Loggers = new Mongo.Collection('loggers');
