@@ -1,0 +1,36 @@
+
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="/loggers">Loggers</a></li>
+  <li role="presentation"><a href="/profile">Profile</a></li>
+  <li role="presentation"><a href="/about">About</a></li>
+</ul>
+
+<div style="text-align: right">
+	<a href="/loggers" ng-click="back()" class="btn btn-default" aria-label="Left Align">
+  	<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"> Back</span>
+	</a>
+</div>
+<h3><b>{{logger.loggername}}</b></h3>
+<p>Project: <b>{{logger.project}}</b></p>
+<p>Amount of files detected: <b>{{logger.files.length}}</b></p>
+
+<h3>Plot</h3> 
+<div id="chartContainer" style="height: 500px; border: 2px dotted #ccc; border-radius: 5px">
+	<div class="jumbotron" style="height: 496px">
+		<h1>Plot</h1>
+		<p>Select a row in the table below in order to plot it</p>
+		<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+	</div>
+</div>
+
+<h3>Data table</h3>
+<table class="table table-bordered table-hover">
+    <thead>
+	    <tr>
+	      <th ng-repeat="item in logger.header" ng-click="toggleSensor(logger.header.indexOf(item))" style="cursor: pointer; background-color: {{getBackgroundColor(logger.header.indexOf(item))}}" class="kack">{{item}}</th>
+	    </tr>
+    </thead>
+	<tr ng-repeat="record in logger.data">
+		<td ng-repeat="value in record track by $index">{{value}}</td>
+	</tr>
+</table>
