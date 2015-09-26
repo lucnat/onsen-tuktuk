@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 var dataRootPath = "/Users/Zeus/Desktop/AirlogAngular/sensordata/";
+=======
+var dataRootPath = "/Users/Luca/Documents/GitHub/Airlog/sensordata/";
+>>>>>>> origin/master
 
 var fs = Npm.require('fs');
 var project = 'project1';	// will be saved in user profile
 
 Meteor.methods({
+<<<<<<< HEAD
 	'sync': function(project, userId){
 		detectLoggers(project);
 		Users.update({_id: userId}, {$set: {profile: {'project': project} }});
@@ -18,6 +23,10 @@ Meteor.methods({
 	'getProject': function(key){
 		var project = Projects.findOne({'_id': key});
 		return project;
+=======
+	'sync': function(project){
+		detectLoggers(project);
+>>>>>>> origin/master
 	}
 });
 
