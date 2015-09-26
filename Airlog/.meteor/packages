@@ -5,8 +5,12 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
 msavin:mongol
-accounts-ui
+insecure
 accounts-password
+accounts-ui
+angular
+urigo:angular-blaze-template
+angularui:angular-ui-router
+twbs:bootstrap
+maazalik:highcharts
