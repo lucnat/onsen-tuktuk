@@ -9,3 +9,17 @@ Tracker.autorun(function(){
 		Meteor.subscribe('loggers', Meteor.userId());
 	}
 });
+
+Tracker.autorun(function(){
+	if(Meteor.user()){
+		try{
+			console.log('syncing all your projects....');
+			var projects = Projects.find().fetch();
+			projects.forEach(function(project){
+				Meteor.call('sync','project');
+			});
+			console.log('done');
+		}
+		catch() {}
+	}
+});

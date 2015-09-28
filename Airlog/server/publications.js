@@ -1,6 +1,7 @@
-Meteor.publish('projects', function(projects){
+Meteor.publish('projects', function(userProjects){
 	try{
-		return Projects.find();
+		console.log(userProjects);
+		return Projects.find({'_id': {$in: userProjects}}); 
 	}
 	catch(e){
 		return;
@@ -9,7 +10,6 @@ Meteor.publish('projects', function(projects){
 
 Meteor.publish('loggers', function(userId){
 	var user = Users.findOne({'_id': userId});
-	console.log(user);
 	try{
 		if(user.profile){
 			var projectIds = user.profile.projects;

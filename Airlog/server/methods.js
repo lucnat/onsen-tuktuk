@@ -1,4 +1,4 @@
-var dataRootPath = "C:/Users/Zeus/Documents/GitHub/Airlog/Airlog/sensordata/";
+var dataRootPath = "/Users/lucanaterop/Documents/Airlog/sensordata/";
 
 var fs = Npm.require('fs');
 var project = 'project1';	// will be saved in user profile
@@ -8,7 +8,7 @@ Meteor.methods({
 		detectLoggers(project);
 		Users.update({_id: userId}, {$set: {profile: {'project': project} }});
 	},
-	'checkIfProjectsExist': function(key){
+	'checkIfProjectExists': function(key){
 		if(Projects.find({'_id': key})){
 			return true;
 		} else {
