@@ -1,4 +1,4 @@
-var dataRootPath = "/Users/Zeus/Desktop/AirlogAngular/sensordata/";
+var dataRootPath = "C:/Users/Zeus/Documents/GitHub/Airlog/Airlog/sensordata/";
 
 var fs = Npm.require('fs');
 var project = 'project1';	// will be saved in user profile
