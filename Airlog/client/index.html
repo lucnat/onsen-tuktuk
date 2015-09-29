@@ -8,10 +8,16 @@
 		</div>
 
 		<div ng-app="airlog">
-			<div ui-view></div>
+			<div ng-if="!!currentUser" ui-view></div>
+			<div ng-if="!currentUser">
+				<h2>Welcome.</h2>
+				<p>Please log in.</p>
+				<blaze-template name="loginButtons"></blaze-template>
+			</div>
 		</div>
 		<footer>
 			footer 
+			blalba
 			<br>
 		</footer>
 	</div>

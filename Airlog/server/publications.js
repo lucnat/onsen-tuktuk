@@ -1,4 +1,5 @@
 Meteor.publish('projects', function(userProjects){
+	if(! userProjects) userProjects = [];
 	try{
 		return Projects.find({'_id': {$in: userProjects}}); 
 	}
