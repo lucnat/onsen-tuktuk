@@ -1,7 +1,6 @@
-var dataRootPath = "/Users/lucanaterop/Documents/Airlog/sensordata/";
+var dataRootPath = "/home/projects/";
 
 var fs = Npm.require('fs');
-var project = 'project1';	// will be saved in user profile
 
 Meteor.methods({
 	'sync': function(project, userId){
