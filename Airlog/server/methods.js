@@ -18,6 +18,10 @@ Meteor.methods({
 	'getProject': function(key){
 		var project = Projects.findOne({'_id': key});
 		return project;
+	},
+	'addProject': function(name){
+		var id = Projects.insert({ 'name': name });
+		return id;
 	}
 });
 
@@ -25,7 +29,7 @@ function detectLoggers(project){
 	// Detects new loggers. Does not do anything with them
 	var loggerFolders = fs.readdirSync(dataRootPath+project);
 	loggerFolders.forEach(function(folder){
-		if(!Loggers.findOne({'project': project, 'loggername': folder})){
+		if(folder[0] !== '.' && !Loggers.findOne({'project': project, 'loggername': folder})){
 			console.log('new logger detected: ' + folder);
 			Loggers.insert({
 				'project': project, 

@@ -1,6 +1,5 @@
 Meteor.publish('projects', function(userProjects){
 	try{
-		console.log(userProjects);
 		return Projects.find({'_id': {$in: userProjects}}); 
 	}
 	catch(e){

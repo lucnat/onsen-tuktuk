@@ -35,7 +35,6 @@ function plotSingle(A,header,index){
 	for(i=0; i<A[0].length; i++){
 		data[i] = [A[0][i].getTime(), Number(A[index][i]) ];
 	}
-	console.log(data);
 	$('#chartContainer').highcharts({
 		chart: {
 			type: 'line'
@@ -78,7 +77,6 @@ function plotMultiple(A,header,indices){
 	for(var i=0; i<indices.length; i++){
 		labels[i] = header[indices[i]];
 	}
-	console.log(labels);
 
 	var data = [];
 	for(var i=0; i < indices.length; i++){
@@ -89,7 +87,6 @@ function plotMultiple(A,header,indices){
 		data[i] = thisSensor;
 	}
 
-	console.log(data);
 	var series = [];
 	for(var i=0; i<indices.length; i++){
 		series.push({

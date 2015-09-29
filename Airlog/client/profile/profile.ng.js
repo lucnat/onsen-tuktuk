@@ -31,12 +31,6 @@ angular.module('airlog').controller('ProfileController', function($scope, $meteo
 				alert('Project not found.');
 			}
 		});
-
-
-
-
-		if(Meteor.call('checkIfProjectExists', $scope.subscribedProject.key)){
-		}
 	}
 });
 

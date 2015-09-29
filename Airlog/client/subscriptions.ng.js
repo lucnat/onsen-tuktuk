@@ -16,10 +16,19 @@ Tracker.autorun(function(){
 			console.log('syncing all your projects....');
 			var projects = Projects.find().fetch();
 			projects.forEach(function(project){
-				Meteor.call('sync','project');
+				Meteor.call('sync', project.name);
 			});
 			console.log('done');
 		}
-		catch() {}
+		catch(e) {};
 	}
 });
+
+
+
+
+addProject = function(name){
+	Meteor.call('addProject', name, function(error, result){
+		console.log('Project added with id: ' + result);
+	});
+};
