@@ -9,7 +9,8 @@ Meteor.methods({
 		Users.update({_id: userId}, {$set: {profile: {'project': project} }});
 	},
 	'checkIfProjectExists': function(key){
-		if(Projects.find({'_id': key})){
+		if(Projects.findOne({'_id': key})){
+			console.log(key);
 			return true;
 		} else {
 			return false;
