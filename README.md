@@ -1,3 +1,1 @@
-# Airlog
-
-A monitor for miniOMNIAlog data logger. Meteor project.
+```http://lucnaterop.github.io/onsen-tuktuk```
