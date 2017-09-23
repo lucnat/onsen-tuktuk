@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Onsen Tuktuk</title>
+</head>
+<body>
+	<div class="framescontainer">
+		<div class="framecontainer">
+			<br>
+			<img width="50" src="http://diylogodesigns.com/blog/wp-content/uploads/2016/04/Apple-Logo-black-png-transparent.png"> <br>
+			<iframe id="iphone-frame" src="http://localhost:3000/?ionicplatform=ios&ionicstatusbarpadding=true" class="frame">IOS</iframe> 
+		</div>
+		<div class="framecontainer">
+			<br>
+			<img width="50" src="http://pngimg.com/uploads/android_logo/android_logo_PNG26.png"> <br>
+			<iframe id="android-frame" src="http://localhost:3000/?ionicplatform=android" class="frame"></iframe>
+		</div>
+	</div>
+
+	<div style="margin: 30px">
+		<input id="appUrl" type="text" name="" placeholder="enter app url, e.g. http://localhost:3000" value="http://localhost:3000" style="width:300px;height:40px;border-radius:35px;border:solid 2px grey; background-color: #ddd; font-size: 15px; padding-left: 30px">
+	</div>
+	
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+
+</body>
+
+<script>
+
+	function setAppUrl(url){
+		$('#iphone-frame').attr('src', url+'?ionicplatform=ios&ionicstatusbarpadding=true');
+		$('#android-frame').attr('src', url+'?ionicplatform=android');
+		$('#windows-frame').attr('src', url+'?ionicplatform=windows');
+	}
+
+	$('#appUrl').change(function(){
+		var url = $('#appUrl').val();
+		setAppUrl(url);
+	})
+</script>
+
+<style type="text/css">
+
+	body {
+		background-color: #ddd;
+	}
+
+	.framescontainer {
+		display: flex;
+		flex-direction: horizontal;
+	}
+
+	iframe {
+		width: 330px;
+		height: 600px;
+		margin: 30px;
+		border: 0;
+		box-shadow: 3px 3px 20px grey;
+		background-color: white;
+	}
+
+	.framecontainer {
+		display: inline;
+		text-align: center;
+	}
+
+	label {
+		font-size: 30px;
+	}
+
+
+</style>
+</html>
