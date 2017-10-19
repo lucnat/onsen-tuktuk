@@ -8,14 +8,16 @@
 	<div class="framescontainer">
 		<div style="flex: 1"></div>
 		<div class="framecontainer">
+			<div style="background-image: url('images/iphone-black.png'); background-repeat: no-repeat; width: 360px; height: 720px; background-size: 100% 100%">
+				<iframe id="iphone-frame" style="margin-top: 88px; margin-left: 23px; height: 545px; width: 313px" src="http://localhost:3000/?ionicplatform=iphone" ></iframe>
+			</div>
 			<br>
-			<img width="50" src="http://diylogodesigns.com/blog/wp-content/uploads/2016/04/Apple-Logo-black-png-transparent.png"> <br>
-			<iframe id="iphone-frame" src="http://localhost:3000/?ionicplatform=ios&ionicstatusbarpadding=true" class="frame">IOS</iframe> 
 		</div>
 		<div class="framecontainer">
+			<div style="background-image: url('images/android.png'); background-repeat: no-repeat; width: 380px; height: 760px; background-size: 100% 100%">
+				<iframe id="android-frame" style="margin-top: 82px; margin-left: 20px; height: 614px; width: 340px" src="http://localhost:3000/?ionicplatform=android" ></iframe>
+			</div>
 			<br>
-			<img width="50" src="http://pngimg.com/uploads/android_logo/android_logo_PNG26.png"> <br>
-			<iframe id="android-frame" src="http://localhost:3000/?ionicplatform=android" class="frame"></iframe>
 		</div>
 		<div style="flex: 1"></div>
 	</div>
@@ -23,14 +25,14 @@
 	<div style="display: flex">
 		<div style="flex: 1"></div>
 		<div style="margin: 30px">
-			<input id="appUrl" type="text" name="" placeholder="enter app url, e.g. http://localhost:3000" value="http://localhost:3000" style="width:300px;height:40px;border-radius:35px;border:solid 2px grey; background-color: #ddd; font-size: 15px; padding-left: 30px">
+			<input id="appUrl" type="text" name="" placeholder="enter app url, e.g. http://localhost:3000" value="http://localhost:3000" style="width:300px;height:40px;border-radius:35px;border:solid 2px grey; background-color: #fff; font-size: 15px; padding-left: 30px">
 		</div>
 		<div style="flex: 1"></div>
 	</div>
 	<div style="display: flex">
 		<div style="flex: 1"></div>
 		<div style="width: 500">
-			<pre class="prettyprint" style="padding: 20px">
+			<pre class="prettyprint" style="padding: 20px; background-color: white">
 // add this to your meteor client
 Meteor.startup(() => { 
 	var url = new URL(document.location.href);
@@ -54,7 +56,6 @@ Meteor.startup(() => {
 </body>
 
 <script>
-
 	function setAppUrl(url){
 		$('#iphone-frame').attr('src', url+'?ionicplatform=ios&ionicstatusbarpadding=true');
 		$('#android-frame').attr('src', url+'?ionicplatform=android');
@@ -69,8 +70,8 @@ Meteor.startup(() => {
 
 <style type="text/css">
 
-	body {
-		background-color: #ddd;
+	body{
+		background-image: url('images/bg.jpg');
 	}
 
 	.framescontainer {
@@ -84,13 +85,12 @@ Meteor.startup(() => {
 		height: 600px;
 		margin: 30px;
 		border: 0;
-		box-shadow: 3px 3px 20px grey;
 		background-color: white;
 	}
 
 	.framecontainer {
-		display: inline;
 		text-align: center;
+		margin: 30px;
 	}
 
 	label {
